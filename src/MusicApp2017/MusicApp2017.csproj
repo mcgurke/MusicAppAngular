@@ -8,6 +8,23 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="wwwroot\app\albums\albumdetails.component.html" />
+    <Content Include="wwwroot\app\albums\albumdetails.component.ts" />
+    <Content Include="wwwroot\app\albums\albums.component.html" />
+    <Content Include="wwwroot\app\albums\albums.component.js" />
+    <Content Include="wwwroot\app\albums\albums.component.js.map" />
+    <Content Include="wwwroot\app\albums\albums.component.ts" />
+    <Content Include="wwwroot\app\albums\products.component.js" />
+    <Content Include="wwwroot\app\albums\products.component.js.map" />
+    <Content Include="wwwroot\app\albums\products.component.ts" />
+    <Content Include="wwwroot\app\app.component.html" />
+    <Content Include="wwwroot\app\navmenu\navmenu.component.css" />
+    <Content Include="wwwroot\app\navmenu\navmenu.component.html" />
+    <Content Include="wwwroot\app\navmenu\navmenu.component.js" />
+    <Content Include="wwwroot\app\navmenu\navmenu.component.js.map" />
+    <Content Include="wwwroot\app\navmenu\navmenu.component.ts" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="1.1.1" />

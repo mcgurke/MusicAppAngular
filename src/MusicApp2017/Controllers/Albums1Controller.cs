@@ -24,7 +24,7 @@ namespace MusicApp2017.Controllers
         [HttpGet]
         public IEnumerable<Album> GetAlbums()
         {
-            return _context.Albums;
+            return _context.Albums.Include(a => a.Artist).Include(a => a.Genre);
         }
 
         // GET: api/Albums1/5
@@ -36,7 +36,7 @@ namespace MusicApp2017.Controllers
                 return BadRequest(ModelState);
             }
 
-            var album = await _context.Albums.SingleOrDefaultAsync(m => m.AlbumID == id);
+            var album = await _context.Albums.Include(a => a.Artist).Include(a => a.Genre).SingleOrDefaultAsync(m => m.AlbumID == id);
 
             if (album == null)
             {
