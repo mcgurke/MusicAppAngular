@@ -38,7 +38,7 @@ export class EditAlbumComponent {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         this.http.put('/api/albums1/' + this.album.albumID, JSON.stringify(this.album), { headers: headers }).subscribe(res => this.postResponse = res.json());
-        this.router.navigate(['./albums']);
+        this.router.navigate(['./']);
     }
 }
 

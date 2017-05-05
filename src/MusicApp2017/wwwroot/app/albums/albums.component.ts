@@ -19,7 +19,7 @@ export class AlbumsComponent {
     }
 
     search(search: string) {
-        alert();
+        alert(search);
         this.http.get('/api/albums1/' + search).subscribe(result => {
             this.albums = result.json();
             

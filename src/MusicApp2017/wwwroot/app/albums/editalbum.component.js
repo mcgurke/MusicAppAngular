@@ -35,7 +35,7 @@ var EditAlbumComponent = (function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         this.http.put('/api/albums1/' + this.album.albumID, JSON.stringify(this.album), { headers: headers }).subscribe(function (res) { return _this.postResponse = res.json(); });
-        this.router.navigate(['./albums']);
+        this.router.navigate(['./']);
     };
     return EditAlbumComponent;
 }());

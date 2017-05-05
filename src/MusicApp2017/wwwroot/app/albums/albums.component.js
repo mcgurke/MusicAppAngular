@@ -20,7 +20,7 @@ var AlbumsComponent = (function () {
     }
     AlbumsComponent.prototype.search = function (search) {
         var _this = this;
-        alert();
+        alert(search);
         this.http.get('/api/albums1/' + search).subscribe(function (result) {
             _this.albums = result.json();
         });
