@@ -8,12 +8,16 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="wwwroot\app\albums\addalbum.component.ts" />
+    <Content Include="wwwroot\app\albums\addalbum.component.html" />
     <Content Include="wwwroot\app\albums\albumdetails.component.html" />
     <Content Include="wwwroot\app\albums\albumdetails.component.ts" />
     <Content Include="wwwroot\app\albums\albums.component.html" />
     <Content Include="wwwroot\app\albums\albums.component.js" />
     <Content Include="wwwroot\app\albums\albums.component.js.map" />
     <Content Include="wwwroot\app\albums\albums.component.ts" />
+    <Content Include="wwwroot\app\albums\editalbum.component.html" />
+    <Content Include="wwwroot\app\albums\editalbum.component.ts" />
     <Content Include="wwwroot\app\albums\products.component.js" />
     <Content Include="wwwroot\app\albums\products.component.js.map" />
     <Content Include="wwwroot\app\albums\products.component.ts" />

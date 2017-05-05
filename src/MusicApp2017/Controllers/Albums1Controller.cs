@@ -22,10 +22,16 @@ namespace MusicApp2017.Controllers
 
         // GET: api/Albums1
         [HttpGet]
-        public IEnumerable<Album> GetAlbums()
+        public IEnumerable<Album> GetAlbums(string search)
         {
+            if (search != null && search != "")
+                return _context.Albums.Include(a => a.Artist).Include(a => a.Genre)
+                .Where(a => a.Title.Contains(search) || a.Artist.Name.Contains(search) || a.Genre.Name.Contains(search));
             return _context.Albums.Include(a => a.Artist).Include(a => a.Genre);
         }
+
+        
+
 
         // GET: api/Albums1/5
         [HttpGet("{id}")]
@@ -87,7 +93,7 @@ namespace MusicApp2017.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                BadRequest(ModelState);
             }
 
             _context.Albums.Add(album);

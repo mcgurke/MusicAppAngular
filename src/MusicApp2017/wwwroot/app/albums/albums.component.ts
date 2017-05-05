@@ -8,11 +8,21 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class AlbumsComponent {
     public albums: Album[];
+    http: Http;
 
     constructor(http: Http) {
+        this.http = http;
         http.get('/api/albums1').subscribe(result => {
             this.albums = result.json();
 
+        });
+    }
+
+    search(search: string) {
+        alert();
+        this.http.get('/api/albums1/' + search).subscribe(result => {
+            this.albums = result.json();
+            
         });
     }
 }

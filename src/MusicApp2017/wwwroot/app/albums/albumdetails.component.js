@@ -11,14 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
+var router_2 = require("@angular/router");
 var AlbumDetailsComponent = (function () {
-    function AlbumDetailsComponent(http, route) {
+    function AlbumDetailsComponent(http, route, r) {
         var _this = this;
+        this.r = r;
+        this.http = http;
+        this.router = r;
         var id = route.snapshot.params['id'];
         http.get('/api/albums1/' + id).subscribe(function (result) {
             _this.album = result.json();
         });
     }
+    AlbumDetailsComponent.prototype.delete = function (albumID) {
+        alert(albumID);
+        this.http.delete('/api/albums1/' + albumID).subscribe(function (res) { });
+        this.router.navigate(['./albums']);
+    };
+    AlbumDetailsComponent.prototype.edit = function (albumID) {
+        this.router.navigate(['./editalbum/' + albumID]);
+    };
     return AlbumDetailsComponent;
 }());
 AlbumDetailsComponent = __decorate([
@@ -26,7 +38,7 @@ AlbumDetailsComponent = __decorate([
         selector: 'albumdetails',
         templateUrl: './albumdetails.component.html',
     }),
-    __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute, router_2.Router])
 ], AlbumDetailsComponent);
 exports.AlbumDetailsComponent = AlbumDetailsComponent;
 //# sourceMappingURL=albumdetails.component.js.map

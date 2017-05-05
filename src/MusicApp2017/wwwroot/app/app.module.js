@@ -13,7 +13,8 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var albums_component_1 = require("./albums/albums.component");
 var albumdetails_component_1 = require("./albums/albumdetails.component");
-var navmenu_component_1 = require("./navmenu/navmenu.component");
+var addalbum_component_1 = require("./albums/addalbum.component");
+var editalbum_component_1 = require("./albums/editalbum.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,14 +26,16 @@ AppModule = __decorate([
                 { path: '', redirectTo: 'albums', pathMatch: 'full' },
                 { path: 'albumdetails/:id', component: albumdetails_component_1.AlbumDetailsComponent },
                 { path: 'albums', component: albums_component_1.AlbumsComponent },
-                //{ path : 'addalbum', component: AddAlbumComponent},
+                { path: 'addalbum', component: addalbum_component_1.AddAlbumComponent },
+                { path: 'editalbum/:id', component: editalbum_component_1.EditAlbumComponent },
                 { path: '**', redirectTo: 'albums' }
             ])],
         declarations: [
             app_component_1.AppComponent,
             albums_component_1.AlbumsComponent,
             albumdetails_component_1.AlbumDetailsComponent,
-            navmenu_component_1.NavMenuComponent
+            addalbum_component_1.AddAlbumComponent,
+            editalbum_component_1.EditAlbumComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })

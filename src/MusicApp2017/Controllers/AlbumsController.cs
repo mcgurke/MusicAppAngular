@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MusicApp2017.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AlbumsController : Controller
     {
         private readonly MusicDbContext _context;

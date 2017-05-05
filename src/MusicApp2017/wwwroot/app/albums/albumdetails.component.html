@@ -8,4 +8,10 @@
     <p>Genre: {{ album.genre.name }}</p>
     <p>Artist: {{ album.artist.name }}</p>
     <p>Artist Bio: {{ album.artist.bio }}</p>
+        <button (click)='delete(album.albumID)' >
+        Delete
+        </button>
+    <button (click)='edit(album.albumID)'>
+        Edit
+    </button>
 </div>

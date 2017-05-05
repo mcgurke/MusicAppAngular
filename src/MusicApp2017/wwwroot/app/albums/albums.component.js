@@ -13,10 +13,18 @@ var http_1 = require("@angular/http");
 var AlbumsComponent = (function () {
     function AlbumsComponent(http) {
         var _this = this;
+        this.http = http;
         http.get('/api/albums1').subscribe(function (result) {
             _this.albums = result.json();
         });
     }
+    AlbumsComponent.prototype.search = function (search) {
+        var _this = this;
+        alert();
+        this.http.get('/api/albums1/' + search).subscribe(function (result) {
+            _this.albums = result.json();
+        });
+    };
     return AlbumsComponent;
 }());
 AlbumsComponent = __decorate([

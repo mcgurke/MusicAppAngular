@@ -1,6 +1,7 @@
 ﻿<h1>Albums</h1>
 
 <p *ngIf="!albums"><em>Loading albums...</em></p>
+<input type="text" id="search" > <button (click)='search(search)' >Search Albums</button>
 <table class='table' *ngIf="albums">
     <thead>
         <tr>
@@ -22,3 +23,5 @@
 <p [routerLinkActive] ="['link-active']">
     <a [routerLink]="['/addalbum']">Add Album</a>
     </p>
+
+
