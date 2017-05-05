@@ -2,6 +2,7 @@
 import { NgForm } from '@angular/forms';
 import { Http, Headers } from '@angular/http';
 import { ActivatedRoute } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'editalbum',
@@ -10,13 +11,14 @@ import { ActivatedRoute } from '@angular/router'
 })
 
 export class EditAlbumComponent {
-
+    router: Router;
     album: Album;
     artists: Artist[];
     genres: Genre[];
     postResponse: Object;
 
-    constructor(private http: Http, route: ActivatedRoute) {
+    constructor(private http: Http, route: ActivatedRoute, private r: Router) {
+        this.router = r;
         var id = route.snapshot.params['id'];
         this.http = http;
         http.get('/api/albums1/' + id).subscribe(result => {
@@ -35,8 +37,8 @@ export class EditAlbumComponent {
     onSubmit(form: NgForm) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        this.http.post('/api/albums1/' + this.album.albumID, JSON.stringify(this.album), { headers: headers }).subscribe(res => this.postResponse = res.json());
-        form.reset();
+        this.http.put('/api/albums1/' + this.album.albumID, JSON.stringify(this.album), { headers: headers }).subscribe(res => this.postResponse = res.json());
+        this.router.navigate(['./albums']);
     }
 }
 

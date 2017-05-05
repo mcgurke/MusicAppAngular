@@ -2,11 +2,9 @@
 
 <div *ngIf="album">
     <form (ngSubmit)="onSubmit()" #f="ngForm">
-        {{album == null}}
         <div class="form-horizontal">
             <h4>Edit Album</h4>
             <hr />
-            {{album.albumID}} 
             <div class="form-group">
                 <label class="control-label col-md-2" >Title</label>
                 <div class="col-md-10">
@@ -26,25 +24,25 @@
                 <label class="control-label col-md-2" for="ArtistID">Artist</label>
                 <div class="col-md-10">
 
-                    <select [(ngModel)]="album.artist" name="album.artist" ng-model="album.artist"  >
+                    <select [(ngModel)]="album.artistID" name="album.artistID" ng-model="album.artistID"  >
                         <option >select artist</option>
-                        <option *ngFor="let artist of artists">{{ artist.name }}</option>
+                        <option *ngFor="let artist of artists">{{ artist.artistID }}</option>
                     </select>
 
                 </div>
             </div>
-            <!--<div class="form-group">
-                <label class="control-label col-md-2" for="genre">Genre</label>
+            <div class="form-group">
+                <label class="control-label col-md-2" for="genre" ng-model="album.genre" >Genre</label>
                 <div class="col-md-10">
 
-                    <select [(ngModel)]="model.genre" name="genre" ng-model="genre">
+                    <select [(ngModel)]="album.genreID" name="album.genreID" ng-model="album.genreID">
                         <option selected>select genre</option>
-                        <option *ngFor="let genre of genres">{{ genre.name }}</option>
+                        <option *ngFor="let genre of genres">{{ genre.genreID }}</option>
                     </select>
 
                 </div>
-            </div>-->
-            {{f.form.valid }} {{ model.title }} {{model.genre}}{{model.genreid}}{{genres}}
+            </div>
+            
 
 
             <div class="form-group">

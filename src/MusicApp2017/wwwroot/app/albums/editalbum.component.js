@@ -11,10 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
+var router_2 = require("@angular/router");
 var EditAlbumComponent = (function () {
-    function EditAlbumComponent(http, route) {
+    function EditAlbumComponent(http, route, r) {
         var _this = this;
         this.http = http;
+        this.r = r;
+        this.router = r;
         var id = route.snapshot.params['id'];
         this.http = http;
         http.get('/api/albums1/' + id).subscribe(function (result) {
@@ -31,8 +34,8 @@ var EditAlbumComponent = (function () {
         var _this = this;
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        this.http.post('/api/albums1/' + this.album.albumID, JSON.stringify(this.album), { headers: headers }).subscribe(function (res) { return _this.postResponse = res.json(); });
-        form.reset();
+        this.http.put('/api/albums1/' + this.album.albumID, JSON.stringify(this.album), { headers: headers }).subscribe(function (res) { return _this.postResponse = res.json(); });
+        this.router.navigate(['./albums']);
     };
     return EditAlbumComponent;
 }());
@@ -41,7 +44,7 @@ EditAlbumComponent = __decorate([
         selector: 'editalbum',
         templateUrl: './editalbum.component.html'
     }),
-    __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute])
+    __metadata("design:paramtypes", [http_1.Http, router_1.ActivatedRoute, router_2.Router])
 ], EditAlbumComponent);
 exports.EditAlbumComponent = EditAlbumComponent;
 var Album = (function () {
